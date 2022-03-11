@@ -12,6 +12,7 @@ This server will be executable with an argument indicating the local port on whi
 
 ---
 ./ hinfosvc 12345
+
 ---
 
 
@@ -31,6 +32,7 @@ Returns information about the processor, for example:
 ### 3. Current load
 
 Returns current load information. This requires calculation from the values given in the / proc / stat file (see link below). The result is, for example:
+
 ---
 
 
@@ -42,6 +44,7 @@ make && ./hinfosvc port
 GET http://servername:12345/hostname
 
 merlin.fit.vutbr.cz
+
 ---
 
 
@@ -51,6 +54,7 @@ GET http://servername:12345/cpu-name
 
 
 Intel(R) Xeon(R) CPU E5-2640 0 @ 2.50GHz
+
 ---
 
 
@@ -59,4 +63,5 @@ make && ./hinfosvc port
 GET http://servername:12345/load
 
 65%
+
 ---
