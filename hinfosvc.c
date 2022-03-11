@@ -23,8 +23,10 @@ void getHostname(char *string)
 
 void getCpuLoad(char *string)
 {
+    //FILE *cpu_load = popen("grep 'cpu ' /proc/stat > file1 | sleep 1 && grep 'cpu ' /proc/stat > file2 | cat file1 file2 |awk -v RS=\"\" '{print ($13-$2+$15-$4)*100/($13-$2+$15-$4+$16-$5) \"%\"}' ", "r");
 
     FILE *cpu_load = popen("grep 'cpu ' /proc/stat | sleep 1 && grep 'cpu ' /proc/stat | awk -v RS=\"\" '{print ($13-$2+$15-$4)*100/($13-$2+$15-$4+$16-$5) \"%\"}' ", "r");
+
     fgets(string, MAX_BUFFER, cpu_load);
     fclose(cpu_load);
 }
@@ -55,8 +57,6 @@ int main(int argc, char* argv[])
         perror("setsockopt(SO_REUSEADDR) failed");
         exit(EXIT_FAILURE);
     }
-
-    // bzero((char*) &server_addr, sizeof(server_addr));                
 
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(port);
