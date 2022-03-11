@@ -6,8 +6,7 @@
 
 The project assignment is to create a server in C / C++, communicating via HTTP, which will provide various information about the system. The server will listen on the specified port and return the required information according to the URL. The server must correctly handle HTTP headers and generate correct HTTP responses. The response type will be text / plain. Communication with the server should be possible both with the help of a web browser, and with tools such as wget and curl. The Server must be executable in Linux Ubuntu 20.04 LTS environment (https://ubuntu.com/).
 
-The server will be translatable using a makefile that creates an executable hinfosvc file.
-This server will be executable with an argument indicating the local port on which it will listen to requests:
+This server is executable with an argument indicating the local port on which it will listen to requests:
 
 
 ---
@@ -16,7 +15,7 @@ This server will be executable with an argument indicating the local port on whi
 ---
 
 
-It will be possible to exit the server using Ctrl + C. The Server will be able to process the following three types of queries that are sent to the server by the GET command:
+For exit the server use Ctrl + C. The Server is able to process the following three types of queries that are sent to the server by the GET command:
 
 
 ---
